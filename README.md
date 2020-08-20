@@ -15,38 +15,28 @@ No projeto original da Rocketseat, a tecnologia utilizada no back-end foi o Node
 
 <hr />
 
-<h2>Prepararação para a execução do projeto</h2>
-<ul>
-  <li>Certifique-se de que o python3.6 está instalado em sua máquina;</li>
-  <li>Crie e ative um <a href="https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais">ambiente virtual</a> em Python para isolar as dependências do projeto das dependências instaladas em sua máquina. Você também pode conferir a <a href="https://docs.python.org/3.6/library/venv.html">documentação oficial</a>, se preferir;</li>
-  
-  ```
-  $ sudo pip install virtualenv
-  $ which python3.6
-  !* copie o retorno do comando dado *!
-  $ virtualenv -p '/path/to/python3.6' ENV
-  $ source ENV/bin/activate
-  ```
- 
-  <li>Dentro do diretório onde está o ENV, clone o repositório:</li>
-  
-  ```
-  $ git init
-  $ git clone https://github.com/lauroandrade/proffy.git 
-  ```
-  
-  <li>Instale as dependências do projeto:</li>
-  
-  ```
-  $ pip install -r requirements.txt
-  ```
-  <li>Execute a aplicação:</li>
-  
-  ```
-  $ python mainapp/mainapp.py
-  ```
-  
-</ul>
+<h2>Execução do projeto</h2>
+
+```
+crie um diretório para receber a aplicação
+$ mkdir proffy-discovery
+
+no diretório, crie e ative um ambiente virtual para isolar as dependências do projeto das dependências já instaladas em sua máquina.
+$ sudo pip install virtualenv
+$ which python3   # copie o retorno deste comando!
+$ virtualenv -p '/path/to/python3' ENV  # cole o retorno no lugar de '/path/to/python3'
+$ source ENV/bin/activate
+
+ainda na pasta raíz do diretório, clone a aplicação e instale as dependências:
+$ git init
+$ git clone https://github.com/lauroandrade/proffy.git
+$ pip install -r proffy/requirements.txt
+
+agora, basta executar a aplicação:
+$ python proffy/mainapp/mainapp.py
+
+```
+
 
 
 
