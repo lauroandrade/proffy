@@ -21,15 +21,15 @@ No projeto original da Rocketseat, a tecnologia utilizada no back-end foi o Node
 
 ## Execução do projeto ##
 
-Antes de começar, certifique-se de que o Python 3 e o virtualenv estão instalados em sua máquina. 
+#### Antes de começar, certifique-se de que o Python 3 e o virtualenv estão instalados em sua máquina. ####
 
-Crie um diretório para receber a aplicação
+Crie um diretório para receber a aplicação:
 
 ```
 mkdir proffy-discovery
 ```
 
-No diretório, crie um ambiente virtual e o ative para isolar as dependências do projeto das dependências já instaladas em sua máquina.
+No diretório, crie um ambiente virtual e o ative para isolar as dependências do projeto das dependências já instaladas em sua máquina:
 
 ```
 sudo pip install virtualenv
