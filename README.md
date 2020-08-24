@@ -54,7 +54,9 @@ pip install -r proffy/requirements.txt
 Execute a aplicação:
 
 ```
-python proffy/mainapp/mainapp.py
+cd proffy/mainapp/
+
+python mainapp.py
 ```
 
 Tudo pronto! Agora, basta entrar no navegador e acessar a rota do <a href="http://localhost:5500">LocalHost</a>. A rota está disponível no terminal.
