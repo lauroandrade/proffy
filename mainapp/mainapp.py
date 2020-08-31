@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
+
 from database.createproffy import createproffy
 from database.db import init_sqlite, finish_sqlite
-from pagesredirect_functions import  give_classes_function
+
 from general_functions import convert_subject, convert_time_to_secs, query_proffy, filter_proffy, call_create_proffy
 from data_structures import weekdays, subjects, define_proffy_values, define_class_values, define_class_schedule_values
+
+import time
 
 app = Flask(__name__)
 
@@ -11,6 +14,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():    
     return render_template('index.html')
+
+
+@app.route('/proffy')
+def confirm_proffy():
+    return render_template('confirm-proffy.html')
 
 
 @app.route('/study', methods=["GET"])
@@ -48,14 +56,13 @@ def give_classes():
         
         call_create_proffy(proffy_values = proffy_values, class_values = class_values, class_schedule_values = class_schedule_values)
         
-        return redirect(url_for('study'))
+        return redirect(url_for('confirm_proffy'))
     else: # GET
         return render_template('give-classes.html', subjects = subjects, weekdays = weekdays)
 
-
 @app.errorhandler(404)
 def not_found(error):
-    return "404 Not Found"  #TODO Create a HTML page to 404 Error
+    return "Error 404 Not Found"  #TODO Create a HTML page to 404 Error
 
 
 if __name__ == '__main__':
