@@ -1,20 +1,28 @@
-// Procurar o botão 
+// Button event listener
 document.querySelector('#add-time')
 .addEventListener('click', cloneField)
-// Quando clicar no botão 
 
-// Executar uma ação
+// Event Listener action
 function cloneField() {
-    // Duplicando o campo
-    const newFieldContainer = document.querySelector('.schedule-time').cloneNode(true)
+    // Selecting all schedules itens
+    const schedules = document.querySelectorAll('.schedule-time')
+    // Cloning the last schedule
+    const newSchedule = schedules[schedules.length - 1].cloneNode(true)
+    // Getting the fields of the last schedule
+    const fields = newSchedule.querySelectorAll('input')
 
-    // Limpando os campos
-    const fields = newFieldContainer.querySelectorAll('input')
+    let fieldIsEmpty = false
 
     fields.forEach(function(field){
+        if (!field.value) 
+            fieldIsEmpty = true
         field.value = ""
     })
 
-    document.querySelector('#schedule-items').appendChild(newFieldContainer)
+    if (fieldIsEmpty) {
+        return false;
+    }
+
+    document.querySelector('#schedule-items').appendChild(newSchedule)
 }
     
